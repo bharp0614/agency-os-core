@@ -1,0 +1,24 @@
+{
+  "business_name": "Jax Roofing",
+  "address": "1438 East Raymond",
+  "city": "Indianapolis",
+  "state": "IN",
+  "zip": "46203",
+  "phone": "3176275668",
+  "website": "[PLACEHOLDER]",
+  "radius_miles": 60,
+  "categories": [],
+  "service_area": [
+    "Indianapolis"
+  ],
+  "hours": {
+    "monday": "8:00 AM – 5:00 PM",
+    "tuesday": "8:00 AM – 5:00 PM",
+    "wednesday": "8:00 AM – 5:00 PM",
+    "thursday": "8:00 AM – 5:00 PM",
+    "friday": "8:00 AM – 5:00 PM",
+    "saturday": "Closed",
+    "sunday": "Closed"
+  },
+  "citation_sources": []
+}

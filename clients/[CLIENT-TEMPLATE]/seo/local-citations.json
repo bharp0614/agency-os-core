@@ -1,0 +1,19 @@
+{
+  "business_name": "[BUSINESS_NAME]",
+  "address": "[STREET_ADDRESS]",
+  "zip": "[ZIP_CODE]",
+  "phone": "[PHONE_NUMBER]",
+  "website": "[DOMAIN]",
+  "categories": [],
+  "service_area": [],
+  "hours": {
+    "monday": "8:00 AM – 5:00 PM",
+    "tuesday": "8:00 AM – 5:00 PM",
+    "wednesday": "8:00 AM – 5:00 PM",
+    "thursday": "8:00 AM – 5:00 PM",
+    "friday": "8:00 AM – 5:00 PM",
+    "saturday": "Closed",
+    "sunday": "Closed"
+  },
+  "citation_sources": []
+}

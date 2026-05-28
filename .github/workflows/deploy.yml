@@ -1,0 +1,89 @@
+name: Agency-OS — Client Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      client_slug:
+        description: 'Client directory slug to deploy (e.g. acme-plumbing)'
+        required: true
+        type: string
+
+# Principle of least privilege — this workflow only reads repository content.
+permissions:
+  contents: read
+
+# ── Security: disable debug log modes that can expose secrets to the build log.
+# These must never be set to 'true' in repository secrets or variables.
+# Declaring them here as 'false' ensures they cannot be overridden by
+# environment-level settings without an explicit workflow change.
+env:
+  ACTIONS_STEP_DEBUG: 'false'
+  ACTIONS_RUNNER_DEBUG: 'false'
+
+jobs:
+  deploy:
+    name: Deploy — ${{ inputs.client_slug }}
+    runs-on: ubuntu-latest
+
+    # Prevent concurrent deployments for the same client slug.
+    # cancel-in-progress: false ensures an in-flight deploy always completes.
+    concurrency:
+      group: deploy-${{ inputs.client_slug }}
+      cancel-in-progress: false
+
+    steps:
+      # ── Guard: validate slug format before touching anything ──────────────────
+      - name: Validate client_slug format
+        env:
+          CLIENT_SLUG: ${{ inputs.client_slug }}
+        run: |
+          if ! [[ "$CLIENT_SLUG" =~ ^[a-z0-9][a-z0-9-]*[a-z0-9]$ ]]; then
+            echo "::error::client_slug '$CLIENT_SLUG' is invalid."
+            echo "::error::Must match ^[a-z0-9][a-z0-9-]*[a-z0-9]$ (lowercase, hyphens only, no leading/trailing hyphens)."
+            exit 1
+          fi
+          echo "Slug validated: $CLIENT_SLUG"
+
+      # ── Checkout ──────────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Toolchain setup ───────────────────────────────────────────────────────
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # ── Unit tests — must pass before any deployment gate ────────────────────
+      - name: Run unit tests
+        run: pnpm test
+
+      # ── Pre-flight: HALT gate (deployment-validator.ts) ───────────────────────
+      # Webhook secrets are passed so the validator can fire HALT notifications.
+      # VERCEL_DEPLOY_HOOK is intentionally withheld here — it must not be
+      # accessible until the validator explicitly clears all checks.
+      - name: Run deployment validator (HALT gate)
+        run: pnpm validate
+        env:
+          SLACK_HALT_WEBHOOK: ${{ secrets.SLACK_HALT_WEBHOOK }}
+          DISCORD_HALT_WEBHOOK: ${{ secrets.DISCORD_HALT_WEBHOOK }}
+
+      # ── Deploy ────────────────────────────────────────────────────────────────
+      # The deploy hook secret enters the environment only after the HALT gate
+      # passes. It is resolved in-memory by deploy.ts and wiped before exit.
+      - name: Deploy client
+        env:
+          CLIENT_SLUG: ${{ inputs.client_slug }}
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          SLACK_HALT_WEBHOOK: ${{ secrets.SLACK_HALT_WEBHOOK }}
+          DISCORD_HALT_WEBHOOK: ${{ secrets.DISCORD_HALT_WEBHOOK }}
+        run: pnpm run client:deploy "$CLIENT_SLUG"

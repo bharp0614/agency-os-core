@@ -1,0 +1,33 @@
+{
+  "name": "agency-os-core",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "scaffold": "tsx scripts/scaffold-engine.ts",
+    "prebuild": "tsx scripts/scaffold-engine.ts && tsx scripts/deployment-validator.ts",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "validate": "tsx scripts/deployment-validator.ts",
+    "heartbeat": "tsx scripts/indexer.ts",
+    "test": "vitest run",
+    "client:deploy": "tsx scripts/deploy.ts",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\" --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "gray-matter": "^4.0.3",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.7",
+    "zod": "^3.24.1"
+  }
+}

@@ -1,0 +1,45 @@
+# AGENCY-OPERATIONAL-BLUEPRINT
+
+## 1. CORE BACKEND (clients/)
+* Purpose: Multi-tenant monorepo for identical client environments.
+* [CLIENT-TEMPLATE]/: Master blueprint. Updates propagate to all client folders.
+* [CLIENT-NAME]/: Isolated directory per client.
+    * STATUS.md: Live automated health snapshot.
+    * website/: Lead capture machine (config.js, assets).
+    * gmb/: Google Business Profile API hub (profile-status.json).
+    * seo/, leads/, reviews/, analytics/, integrations/: Business logic folders.
+
+## 2. CLIENT TRUTH SOURCE (/truth-source/)
+* Purpose: Mandatory context window for AI agents.
+* 01-brand-identity.md: Brand voice, hex codes, typography.
+* 02-business-operations.md: Service catalog, pricing, SOPs, service radius.
+* 03-seo-and-aeo.md: NAP format, keywords, AEO prompts.
+* 04-digital-assets.md: Vault reference pointers ([SECURE_VAULT_REF]).
+
+## 3. WEBSITE PAGES ENGINE
+* 01_MAIN-PAGES/: Trust templates (home, about, faq).
+* 02_SERVICE-PAGES/: Transactional templates (Emergency vs. Considered funnels).
+* 03_LOCAL-SEO-RADIUS/: City-specific files.
+* 04_FINANCING/ & 05_LEGAL/: Value-add and compliance files.
+
+## 4. FRONTEND-OS (src/)
+* Purpose: React-based management of agentic workflows.
+* src/shared/: Reusable utilities, React hooks, API configs, UI primitives.
+* src/features/: Isolated modules (e.g., truth-source-manager).
+
+## 5. SECURITY (Hybrid Pointer SOP)
+* Vaulting: Credentials stored in Vercel/AWS Secrets.
+* Pointer: Markdown files store only reference tags (e.g., [SECURE_VAULT_REF: ID]).
+* Execution: Secrets fetched in-memory, used, and wiped immediately.
+
+## 6. AUTOMATION & HALT PROTOCOL
+* seo/local-citations.json: Mandatory: business_name, address, zip, phone. Missing fields trigger system HALT.
+* leads/conversion-data.json: Dual-funnel logic (Emergency=calls; Considered=forms).
+* Template Factory: AI selects from 20 pre-verified templates and injects data directly from the Truth Source.
+
+## 7. WORKFLOW & PROCESS THINKING
+* No Vision-to-Code: Never build from scratch.
+* Schema Enforcement: Use Zod to validate truth-source/ files; reject changes if schema is broken.
+* Fail-Fast Logic: Build pipeline kills process on error via process.exit(1).
+* Notification Loop: HALT triggers alerts via Slack/Discord with STATUS.md link.
+* Stability: Use pinned lockfiles (pnpm-lock.yaml) and "Canary" deployments.

@@ -1,0 +1,19 @@
+{
+  "funnel_type": "dual",
+  "emergency": {
+    "primary_action": "call",
+    "phone": "555-0198",
+    "cta_text": "Call Now — 24/7 Emergency Service",
+    "response_time_promise": "60-minute response"
+  },
+  "considered": {
+    "primary_action": "form",
+    "form_endpoint": "https://apexplumbing.com/api/contact",
+    "cta_text": "Get a Free Estimate",
+    "follow_up_sla_hours": 24
+  },
+  "tracking": {
+    "gtm_id": "[GTM_ID]",
+    "call_tracking_number": "[CALL_TRACKING_NUMBER]"
+  }
+}

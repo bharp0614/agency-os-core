@@ -1,0 +1,13 @@
+{
+  "business_name": "[BUSINESS_NAME]",
+  "place_id": "[GOOGLE_PLACE_ID]",
+  "verification_status": "pending",
+  "last_sync": null,
+  "attributes": {
+    "categories": [],
+    "hours": {},
+    "photos_count": 0,
+    "reviews_count": 0,
+    "average_rating": null
+  }
+}

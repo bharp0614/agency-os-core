@@ -1,0 +1,22 @@
+{
+  "business_name": "Apex Plumbing",
+  "address": "100 Pipe Way",
+  "city": "Austin",
+  "state": "TX",
+  "zip": "78701",
+  "phone": "555-0198",
+  "website": "[DOMAIN]",
+  "radius_miles": 0,
+  "categories": [],
+  "service_area": ["Austin"],
+  "hours": {
+    "monday": "8:00 AM – 5:00 PM",
+    "tuesday": "8:00 AM – 5:00 PM",
+    "wednesday": "8:00 AM – 5:00 PM",
+    "thursday": "8:00 AM – 5:00 PM",
+    "friday": "8:00 AM – 5:00 PM",
+    "saturday": "Closed",
+    "sunday": "Closed"
+  },
+  "citation_sources": []
+}
