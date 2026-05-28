@@ -8,7 +8,7 @@
   },
   "considered": {
     "primary_action": "form",
-    "form_endpoint": "[PLACEHOLDER: https://jaxroofing.com/estimate]",
+    "form_endpoint": "https://jaxroofing.com/api/contact",
     "cta_text": "Get a Free Estimate",
     "follow_up_sla_hours": 24
   },

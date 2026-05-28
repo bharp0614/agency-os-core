@@ -1,7 +1,7 @@
 # STATUS — jax-roofing
 
-> **Generated:** 2026-05-28T14:20:59.339Z
-> **Overall Status:** **⚠️ WARNING** — Non-critical issues found. Review before going live.
+> **Generated:** 2026-05-28T15:16:04.702Z
+> **Overall Status:** **✅ HEALTHY** — All checks passed.
 
 ---
 
@@ -20,12 +20,8 @@
 | `leads_schema` | `leads/conversion-data.json` | ✅ PASS | Schema valid |
 | `emergency_phone` | `leads/conversion-data.json` | ✅ PASS | "3176275668" |
 | `emergency_cta` | `leads/conversion-data.json` | ✅ PASS | "Call Now — 24/7 Emergency Service" |
-| `form_endpoint` | `leads/conversion-data.json` | ⚠️ WARN | Form endpoint is an unfilled placeholder — configure before going live |
+| `form_endpoint` | `leads/conversion-data.json` | ✅ PASS | "https://jaxroofing.com/api/contact" |
 | `leads_credential_safety` | `leads/conversion-data.json` | ✅ PASS | No raw credentials detected |
-
-## ⚠️ Warnings (1)
-
-1. form_endpoint: Form endpoint is an unfilled placeholder — configure before going live
 
 ---
 
