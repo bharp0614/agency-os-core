@@ -1,5 +1,5 @@
-const PHONE = '(317) 555-0100';
-const PHONE_HREF = 'tel:+13175550100';
+const PHONE = '(317) 627-5668';
+const PHONE_HREF = 'tel:+13176275668';
 
 export function LandingPage() {
   return (
