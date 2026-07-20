@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Circle City Auto Repair — Indianapolis, IN</title>
+  <meta name="description" content="Locally owned auto repair in Indianapolis. ASE Certified Master Technician James Whitaker leads our team. Honest repairs, no upsell. Call (317) 627-5668." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .cert-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .cert-icon { font-size: 32px; margin-bottom: 10px; }
+    .cert-card h4 { font-size: 16px; color: var(--navy); margin-bottom: 6px; }
+    .cert-card p { font-size: 13px; color: var(--grey-mid); }
+    .team-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      align-items: start;
+    }
+    .team-photo {
+      background: var(--grey);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-mid);
+      font-size: 13px;
+      text-align: center;
+      padding: 12px;
+      font-family: 'Oswald', sans-serif;
+    }
+    .team-info h3 { font-size: 26px; margin-bottom: 4px; }
+    .team-title { color: var(--red); font-weight: 600; font-size: 15px; margin-bottom: 14px; font-family: 'Oswald', sans-serif; }
+    .team-info p { color: var(--grey-mid); margin-bottom: 12px; }
+    .team-creds { list-style: none; padding: 0; }
+    .team-creds li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      font-size: 14px;
+      color: var(--grey-mid);
+      border-bottom: 1px solid var(--border);
+    }
+    .team-creds li::before { content: '✓'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .area-tag {
+      background: var(--navy);
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    @media (max-width: 768px) {
+      .team-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Circle City <span>Auto Repair</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:3176275668" class="btn btn-primary nav-cta">(317) 627-5668</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Locally Owned — Indianapolis, IN</span>
+      <h1>About Circle City Auto Repair</h1>
+      <p>ASE Certified, locally owned, and built on one rule: only fix what actually needs fixing.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-placeholder">[ Photo: Shop exterior or team photo ]<br><small>Replace with actual photo</small></div>
+        <div class="about-content">
+          <span class="eyebrow">Our Story</span>
+          <h2>Honest Repairs for Indianapolis Drivers</h2>
+          <p>Circle City Auto Repair was built on a simple idea: Indianapolis drivers deserve a shop they can trust. No upselling. No unnecessary repairs. Just an honest diagnosis and quality work backed by a real warranty.</p>
+          <p>We're locally owned and operated out of our shop on E Washington St, serving Marion County and the surrounding Indianapolis area. Every vehicle that comes through our door gets the same care we'd give our own.</p>
+          <p>Our team is led by James Whitaker, ASE Master Automotive Technician with over 12 years of hands-on experience on domestic and import drivetrains. We work on all makes and models.</p>
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="number">12+</div>
+              <div class="label">Years Experience</div>
+            </div>
+            <div class="stat-box">
+              <div class="number">24/24K</div>
+              <div class="label">Warranty on Repairs</div>
+            </div>
+            <div class="stat-box">
+              <div class="number">AAA</div>
+              <div class="label">Approved Shop</div>
+            </div>
+            <div class="stat-box">
+              <div class="number">ASE</div>
+              <div class="label">Certified Technicians</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section section-grey">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our Team</span>
+        <h2>Meet Your Lead Technician</h2>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">[ Photo: James Whitaker ]<br><small>Replace with actual photo</small></div>
+        <div class="team-info">
+          <h3>James Whitaker</h3>
+          <div class="team-title">Lead Master Technician</div>
+          <p>James has spent over 12 years diagnosing and repairing vehicles of all makes and models. His approach is simple: explain everything before touching the car, and only replace what actually needs to be replaced.</p>
+          <p>He's factory-trained on domestic and import drivetrains and holds ASE Master Technician certification — one of the highest credentials in the industry.</p>
+          <ul class="team-creds">
+            <li>ASE Master Automotive Technician</li>
+            <li>12+ years hands-on repair experience</li>
+            <li>Factory-trained on domestic and import drivetrains</li>
+            <li>Member, Automotive Service Association (ASA)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Credentials</span>
+        <h2>Certifications &amp; Affiliations</h2>
+        <p>We hold the credentials that matter — not just the ones that look good on a wall.</p>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon">🔧</div>
+          <h4>ASE Certified</h4>
+          <p>National Institute for Automotive Service Excellence — the industry standard.</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🚗</div>
+          <h4>AAA Approved</h4>
+          <p>AAA Approved Auto Repair — vetted for quality, honesty, and customer satisfaction.</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🔩</div>
+          <h4>NAPA AutoCare</h4>
+          <p>NAPA AutoCare Center — backed by NAPA's nationwide parts and warranty network.</p>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">📋</div>
+          <h4>State Licensed</h4>
+          <p>Indiana Motor Vehicle Repair Facility Registration — fully licensed and compliant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="section section-grey">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Where We Serve</span>
+        <h2>Serving Indianapolis &amp; Marion County</h2>
+        <p>We're conveniently located on E Washington St, easy to reach from anywhere in the city.</p>
+      </div>
+      <div class="areas-list">
+        <span class="area-tag">Downtown Indianapolis</span>
+        <span class="area-tag">Broad Ripple</span>
+        <span class="area-tag">Irvington</span>
+        <span class="area-tag">Fountain Square</span>
+        <span class="area-tag">Beech Grove</span>
+        <span class="area-tag">Marion County</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Come See What Honest Auto Repair Looks Like</h2>
+      <p>Call us or schedule online — same-day appointments available.</p>
+      <div class="cta-band-btns">
+        <a href="tel:3176275668" class="btn btn-primary">Call (317) 627-5668</a>
+        <a href="contact.html" class="btn btn-outline">Schedule Service</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Circle City <span>Auto Repair</span></div>
+        <p style="font-size:14px; margin-bottom:10px;">4712 E Washington St<br>Indianapolis, IN 46201</p>
+        <p style="font-size:14px;">(317) 627-5668<br>bharp0614@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Oil Change</a></li>
+          <li><a href="services.html">Brake Repair</a></li>
+          <li><a href="services.html">Engine Diagnostics</a></li>
+          <li><a href="services.html">Transmission</a></li>
+          <li><a href="services.html">Tire Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Schedule Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Circle City Auto Repair. All rights reserved.</span>
+      <span>Indianapolis, IN | Marion County</span>
+    </div>
+    <div class="footer-disclaimer">⚠ TEST FIXTURE ONLY — Synthetic data. Do not deploy to any live or client site.</div>
+  </footer>
+
+</body>
+</html>

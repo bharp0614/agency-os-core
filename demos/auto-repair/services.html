@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Repair Services | Circle City Auto Repair — Indianapolis, IN</title>
+  <meta name="description" content="Full auto repair services in Indianapolis — brakes, oil changes, engine diagnostics, transmission, tires, and more. ASE Certified. Call (317) 627-5668." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .service-full {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-full:last-child { border-bottom: none; }
+    .service-full-img {
+      background: var(--grey);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-mid);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      text-align: center;
+      padding: 16px;
+    }
+    .service-full-content h3 { font-size: 26px; margin-bottom: 12px; }
+    .service-full-content p { color: var(--grey-mid); margin-bottom: 14px; }
+    .service-full-content ul { list-style: none; padding: 0; margin-bottom: 20px; }
+    .service-full-content ul li {
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+      color: var(--grey-mid);
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-full-content ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+    .emergency-box {
+      background: #fff5f5;
+      border: 2px solid var(--red);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .emergency-box h3 { color: var(--red); font-size: 22px; margin-bottom: 8px; }
+    .emergency-box p { color: var(--grey-mid); margin-bottom: 14px; }
+    @media (max-width: 768px) {
+      .service-full { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Circle City <span>Auto Repair</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:3176275668" class="btn btn-primary nav-cta">(317) 627-5668</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Indianapolis, IN</span>
+      <h1>Auto Repair Services</h1>
+      <p>Everything your vehicle needs — handled by ASE Certified technicians with a 24-month warranty on every repair.</p>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-bar-item">ASE Certified</div>
+      <div class="trust-bar-item">AAA Approved</div>
+      <div class="trust-bar-item">NAPA AutoCare Center</div>
+      <div class="trust-bar-item">24-Mo / 24K-Mile Warranty</div>
+    </div>
+  </div>
+
+  <!-- SERVICES DETAIL -->
+  <section class="section">
+    <div class="container">
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: Technician performing oil change ]<br><small>Replace with actual shop photo</small></div>
+        <div class="service-full-content">
+          <span class="eyebrow">Maintenance</span>
+          <h3>Oil Change &amp; Fluid Service</h3>
+          <p>Regular oil changes are the single most important thing you can do for your engine. We offer conventional and full synthetic options, and we always include a multi-point inspection at no extra charge.</p>
+          <ul>
+            <li>Conventional &amp; synthetic oil changes</li>
+            <li>Coolant / antifreeze flush</li>
+            <li>Power steering fluid exchange</li>
+            <li>Brake fluid flush</li>
+            <li>Multi-point vehicle inspection included</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Schedule an Oil Change</a>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-content">
+          <span class="eyebrow">Safety</span>
+          <h3>Brake Repair &amp; Replacement</h3>
+          <p>Squealing brakes or a soft pedal are warning signs you shouldn't ignore. We diagnose the full brake system and only replace what needs replacing — no upselling, no pressure.</p>
+          <ul>
+            <li>Brake pad replacement</li>
+            <li>Rotor resurfacing &amp; replacement</li>
+            <li>Caliper repair &amp; replacement</li>
+            <li>Brake fluid flush</li>
+            <li>ABS system diagnosis</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Schedule Brake Service</a>
+        </div>
+        <div class="service-full-img">[ Photo: Brake inspection close-up ]<br><small>Replace with actual shop photo</small></div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: Diagnostic scan tool on vehicle ]<br><small>Replace with actual shop photo</small></div>
+        <div class="service-full-content">
+          <span class="eyebrow">Diagnostics</span>
+          <h3>Engine Diagnostics</h3>
+          <p>That check engine light means something. We run a full computer scan, read the codes, and explain exactly what's happening in plain language — before any work is authorized.</p>
+          <ul>
+            <li>Full OBD-II diagnostic scan</li>
+            <li>Check engine light diagnosis</li>
+            <li>Emissions system inspection</li>
+            <li>Performance issue troubleshooting</li>
+            <li>Written estimate before any repair</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Book a Diagnostic</a>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-content">
+          <span class="eyebrow">Drivetrain</span>
+          <h3>Transmission Service</h3>
+          <p>Your transmission is one of the most expensive components in your vehicle. Regular service extends its life and catches problems early — before a $3,000 rebuild becomes necessary.</p>
+          <ul>
+            <li>Transmission fluid change</li>
+            <li>Filter replacement</li>
+            <li>Transmission flush</li>
+            <li>Leak diagnosis &amp; repair</li>
+            <li>Torque converter service</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Schedule Transmission Service</a>
+        </div>
+        <div class="service-full-img">[ Photo: Transmission service in progress ]<br><small>Replace with actual shop photo</small></div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: Tire rotation and wheel alignment ]<br><small>Replace with actual shop photo</small></div>
+        <div class="service-full-content">
+          <span class="eyebrow">Tires &amp; Wheels</span>
+          <h3>Tire Rotation &amp; Wheel Alignment</h3>
+          <p>Uneven tire wear costs you money. Proper rotation and alignment extend tire life significantly and improve fuel economy and handling.</p>
+          <ul>
+            <li>Tire rotation</li>
+            <li>Wheel balancing</li>
+            <li>4-wheel alignment</li>
+            <li>TPMS sensor service</li>
+            <li>Flat tire repair</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Schedule Tire Service</a>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-content">
+          <span class="eyebrow">Electrical</span>
+          <h3>Battery Testing &amp; Replacement</h3>
+          <p>Dead batteries happen without warning. We offer free battery testing for any vehicle, and same-day replacement if yours doesn't pass — we stock the most common sizes.</p>
+          <ul>
+            <li>Free battery load test</li>
+            <li>Same-day battery replacement</li>
+            <li>Alternator &amp; starter testing</li>
+            <li>Charging system diagnosis</li>
+            <li>Corrosion cleaning &amp; terminal service</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Get a Free Battery Test</a>
+        </div>
+        <div class="service-full-img">[ Photo: Battery replacement service ]<br><small>Replace with actual shop photo</small></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EMERGENCY BOX -->
+  <section class="section section-grey">
+    <div class="container">
+      <div class="emergency-box">
+        <h3>Roadside Emergency?</h3>
+        <p>If your vehicle is unsafe to drive, do not operate it. Pull over to a safe location and call us. We can arrange towing, flat tire changes, and jump starts for customers in Marion County.</p>
+        <a href="tel:3176275668" class="btn btn-primary">Call Now: (317) 627-5668</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Same-Day Service on Most Repairs</h2>
+      <p>Call ahead or schedule online. We'll get you in fast.</p>
+      <div class="cta-band-btns">
+        <a href="tel:3176275668" class="btn btn-primary">Call (317) 627-5668</a>
+        <a href="contact.html" class="btn btn-outline">Schedule Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Circle City <span>Auto Repair</span></div>
+        <p style="font-size:14px; margin-bottom:10px;">4712 E Washington St<br>Indianapolis, IN 46201</p>
+        <p style="font-size:14px;">(317) 627-5668<br>bharp0614@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Oil Change</a></li>
+          <li><a href="services.html">Brake Repair</a></li>
+          <li><a href="services.html">Engine Diagnostics</a></li>
+          <li><a href="services.html">Transmission</a></li>
+          <li><a href="services.html">Tire Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Schedule Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Circle City Auto Repair. All rights reserved.</span>
+      <span>Indianapolis, IN | Marion County</span>
+    </div>
+    <div class="footer-disclaimer">⚠ TEST FIXTURE ONLY — Synthetic data. Do not deploy to any live or client site.</div>
+  </footer>
+
+</body>
+</html>

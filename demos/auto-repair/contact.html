@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Schedule Service | Circle City Auto Repair — Indianapolis, IN</title>
+  <meta name="description" content="Schedule auto repair service in Indianapolis. Call (317) 627-5668 or use our online form. Located at 4712 E Washington St. Mon–Fri 8am–6pm, Sat 9am–4pm." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .map-placeholder {
+      background: var(--grey);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-mid);
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .disclaimer-box {
+      background: #fff5f5;
+      border: 1px solid #f5c6c6;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--grey-mid);
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Circle City <span>Auto Repair</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="tel:3176275668" class="btn btn-primary nav-cta">(317) 627-5668</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Indianapolis, IN</span>
+      <h1>Schedule Service</h1>
+      <p>Call us directly for same-day service, or fill out the form and we'll get back to you within the hour during business hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div>
+          <span class="eyebrow">Schedule Online</span>
+          <h2 style="margin-bottom:24px;">Request an Appointment</h2>
+          <div class="disclaimer-box">⚠ This form is a TEST FIXTURE. Submissions do not go to a real customer. Do not deploy to a live site.</div>
+          <form class="contact-form" action="mailto:bharp0614@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(317) 555-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service…</option>
+                <option>Oil Change &amp; Fluid Service</option>
+                <option>Brake Repair &amp; Replacement</option>
+                <option>Engine Diagnostics</option>
+                <option>Transmission Service</option>
+                <option>Tire Rotation &amp; Alignment</option>
+                <option>Battery Testing &amp; Replacement</option>
+                <option>Cooling System Flush</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vehicle">Year / Make / Model</label>
+              <input type="text" id="vehicle" name="vehicle" placeholder="2019 Honda Civic" />
+            </div>
+            <div class="form-group">
+              <label for="message">Describe the Issue (optional)</label>
+              <textarea id="message" name="message" placeholder="Any details about what you're experiencing…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Request Appointment</button>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <span class="eyebrow">Find Us</span>
+          <h3 style="font-size:26px; margin-bottom:24px;">Contact Information</h3>
+
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail-text">
+              <strong>Phone</strong>
+              <span><a href="tel:3176275668">(317) 627-5668</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">✉</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <span><a href="mailto:bharp0614@gmail.com">bharp0614@gmail.com</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Address</strong>
+              <span>4712 E Washington St<br>Indianapolis, IN 46201</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-detail-text">
+              <strong>Hours</strong>
+              <table class="hours-table">
+                <tr><td>Monday – Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+                <tr><td>Saturday</td><td>9:00 AM – 4:00 PM</td></tr>
+                <tr><td>Sunday</td><td>Closed</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="map-placeholder">[ Google Map embed goes here ]<br><small style="font-size:12px; font-family:'Roboto',sans-serif;">4712 E Washington St, Indianapolis, IN 46201</small></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY STRIP -->
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-bar-item">Same-Day Appointments Available</div>
+      <div class="trust-bar-item">Call for Towing &amp; Roadside Assist</div>
+      <div class="trust-bar-item">Written Estimate Before Any Work</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Circle City <span>Auto Repair</span></div>
+        <p style="font-size:14px; margin-bottom:10px;">4712 E Washington St<br>Indianapolis, IN 46201</p>
+        <p style="font-size:14px;">(317) 627-5668<br>bharp0614@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Oil Change</a></li>
+          <li><a href="services.html">Brake Repair</a></li>
+          <li><a href="services.html">Engine Diagnostics</a></li>
+          <li><a href="services.html">Transmission</a></li>
+          <li><a href="services.html">Tire Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Schedule Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Circle City Auto Repair. All rights reserved.</span>
+      <span>Indianapolis, IN | Marion County</span>
+    </div>
+    <div class="footer-disclaimer">⚠ TEST FIXTURE ONLY — Synthetic data. Do not deploy to any live or client site.</div>
+  </footer>
+
+</body>
+</html>
