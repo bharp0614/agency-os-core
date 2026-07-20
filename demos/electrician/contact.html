@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Free Estimate | Indy Electric Pro — Indianapolis, IN</title>
+  <meta name="description" content="Call Indy Electric Pro at (317) 555-0148 — 24/7 for electrical emergencies in Indianapolis. Free estimates on panel upgrades, EV chargers, rewiring, and all planned work." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .disclaimer-box {
+      background: #fff5f5;
+      border: 1px solid #f5c6c6;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--grey-mid);
+      margin-bottom: 24px;
+    }
+    .emergency-callout {
+      background: var(--red);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .emergency-callout h3 {
+      color: var(--white);
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .emergency-callout p {
+      opacity: 0.9;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .service-area-note {
+      background: var(--grey);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 32px;
+    }
+    .service-area-note h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .service-area-note p { font-size: 14px; color: var(--grey-mid); margin: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- EMERGENCY STRIP -->
+  <div class="emergency-strip">
+    ⚡ ELECTRICAL EMERGENCY? We Answer 24/7 — <a href="tel:3175550148">Call (317) 555-0148</a>
+  </div>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Indy Electric <span>Pro</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="tel:3175550148" class="btn btn-primary nav-cta">(317) 555-0148</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Indianapolis, IN — Licensed Master Electrician</span>
+      <h1>Contact &amp; Free Estimate</h1>
+      <p>Electrical emergency? Call directly — 24/7. Planning a project? Use the form below and we'll get back to you same day during business hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="section">
+    <div class="container">
+
+      <!-- EMERGENCY CALLOUT -->
+      <div class="emergency-callout">
+        <h3>⚡ Electrical Emergency?</h3>
+        <p>Sparks, burning smell, power outage — call us. We pick up 24/7 and dispatch immediately.</p>
+        <a href="tel:3175550148" class="btn-emergency">📞 (317) 555-0148 — 24/7 Emergency Line</a>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div>
+          <span class="eyebrow">Planned Work &amp; Estimates</span>
+          <h2 style="margin-bottom:24px;">Request a Free Estimate</h2>
+          <div class="disclaimer-box">⚠ This form is a TEST FIXTURE. Submissions do not go to a real customer. Do not deploy to a live site.</div>
+          <form class="contact-form" action="mailto:bharp0614@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(317) 555-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="">Select a service…</option>
+                <optgroup label="Planned Work">
+                  <option>Panel Upgrade (100A → 200A)</option>
+                  <option>EV Charger Installation</option>
+                  <option>Whole-Home Rewiring</option>
+                  <option>Add Outlets or Circuits</option>
+                  <option>Lighting Installation</option>
+                  <option>Generator Installation</option>
+                </optgroup>
+                <optgroup label="Emergency / Diagnostic">
+                  <option>Power Outage / Partial Power Loss</option>
+                  <option>Breaker Keeps Tripping</option>
+                  <option>Sparks or Burning Smell</option>
+                  <option>Other Electrical Issue</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="address">Property Address</label>
+              <input type="text" id="address" name="address" placeholder="123 Main St, Indianapolis, IN" />
+            </div>
+            <div class="form-group">
+              <label for="home-age">Approximate Home Age (optional)</label>
+              <select id="home-age" name="home-age">
+                <option value="">Select…</option>
+                <option>Built before 1960</option>
+                <option>1960–1980</option>
+                <option>1980–2000</option>
+                <option>After 2000</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Describe the Issue or Project</label>
+              <textarea id="message" name="message" placeholder="Tell us what's happening or what you'd like done…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Request Free Estimate</button>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <span class="eyebrow">Reach Us</span>
+          <h3 style="font-size:26px; margin-bottom:24px;">Contact Information</h3>
+
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail-text">
+              <strong>Emergency Line — 24/7</strong>
+              <span><a href="tel:3175550148">(317) 555-0148</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">✉</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <span><a href="mailto:ryan@indyelectricpro.com">ryan@indyelectricpro.com</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Service Area</strong>
+              <span>Marion County<br>Indianapolis, Indiana</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-detail-text">
+              <strong>Hours</strong>
+              <table class="hours-table">
+                <tr><td>Emergency Line</td><td>24/7/365</td></tr>
+                <tr><td>Estimates / Scheduled</td><td>Mon–Fri 7am–6pm</td></tr>
+                <tr><td>Saturday</td><td>8am–2pm</td></tr>
+                <tr><td>Sunday</td><td>Emergency Only</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="service-area-note">
+            <h4>Free Estimates on All Planned Work</h4>
+            <p>We provide free written estimates for all non-emergency electrical work before we schedule anything. No commitment required. We'll tell you exactly what the job costs before we start.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-bar-item">Master Electrician Licensed</div>
+      <div class="trust-bar-item">Permit Pulled Every Job</div>
+      <div class="trust-bar-item">Free Written Estimates</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Indy Electric <span>Pro</span></div>
+        <p style="font-size:14px; margin-bottom:10px;">Serving Indianapolis<br>Marion County &amp; Surrounding</p>
+        <p style="font-size:14px;">(317) 555-0148<br>Emergency Line — 24/7</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Emergency Electrical</a></li>
+          <li><a href="services.html">Panel Upgrade</a></li>
+          <li><a href="services.html">EV Charger Install</a></li>
+          <li><a href="services.html">Whole-Home Rewiring</a></li>
+          <li><a href="services.html">Outlets &amp; Circuits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Free Estimate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Indy Electric Pro. All rights reserved.</span>
+      <span>Indianapolis, IN | Licensed &amp; Insured</span>
+    </div>
+    <div class="footer-disclaimer">⚠ DEMO SITE — Placeholder data. Not a real business. Do not call this number.</div>
+  </footer>
+
+</body>
+</html>
