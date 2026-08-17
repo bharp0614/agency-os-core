@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrical Services | Indy Electric Pro — Indianapolis, IN</title>
+  <meta name="description" content="Licensed electrician services in Indianapolis — emergency electrical, panel upgrades, EV charger installation, whole-home rewiring, outlets and lighting. Call (317) 555-0148." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .service-full {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-full:last-child { border-bottom: none; }
+    .service-full-img {
+      background: var(--grey);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-mid);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      text-align: center;
+      padding: 16px;
+    }
+    .service-full-content h3 { font-size: 26px; margin-bottom: 12px; }
+    .service-full-content p { color: var(--grey-mid); margin-bottom: 14px; }
+    .service-full-content ul { list-style: none; padding: 0; margin-bottom: 20px; }
+    .service-full-content ul li {
+      padding: 6px 0 6px 20px;
+      position: relative;
+      color: var(--grey-mid);
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-full-content ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+    .service-full-content.considered ul li::before { color: var(--yellow); }
+    .section-divider {
+      background: var(--black);
+      color: var(--white);
+      padding: 20px 0;
+      text-align: center;
+      margin: 48px 0 0;
+    }
+    .section-divider span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .service-full { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EMERGENCY STRIP -->
+  <div class="emergency-strip">
+    ⚡ ELECTRICAL EMERGENCY? We Answer 24/7 — <a href="tel:3175550148">Call (317) 555-0148</a>
+  </div>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-logo">Indy Electric <span>Pro</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:3175550148" class="btn btn-primary nav-cta">(317) 555-0148</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Indianapolis, IN — Licensed Master Electrician</span>
+      <h1>Electrical Services</h1>
+      <p>Emergency response 24/7. Planned upgrades scheduled within the week. Every job permitted and inspected.</p>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-bar-item">Master Electrician Licensed</div>
+      <div class="trust-bar-item">Permit Pulled Every Job</div>
+      <div class="trust-bar-item">24/7 Emergency Response</div>
+      <div class="trust-bar-item">Free Estimates on Planned Work</div>
+    </div>
+  </div>
+
+  <!-- EMERGENCY SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow" style="color:var(--red);">Emergency Services — 24/7</span>
+        <h2>We Answer Electrical Emergencies Any Hour</h2>
+        <p>Sparks, burning smells, and power outages don't wait for business hours. Neither do we.</p>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: Electrician at breaker panel at night ]<br><small>Replace with actual photo</small></div>
+        <div class="service-full-content">
+          <span class="eyebrow">Emergency — 24/7</span>
+          <h3>Power Outage &amp; Partial Power Loss</h3>
+          <p>Lost power to part of your home or the whole house? We diagnose whether the issue is a failed breaker, a wiring fault, the main panel, or the utility service entrance — and we fix what's on our side of the meter fast.</p>
+          <ul>
+            <li>Partial power loss diagnosis</li>
+            <li>Failed double-pole breaker replacement</li>
+            <li>Main breaker inspection and replacement</li>
+            <li>Service entrance fault diagnosis</li>
+            <li>GFCI and AFCI breaker troubleshooting</li>
+          </ul>
+          <a href="tel:3175550148" class="btn-emergency">📞 Call Now — 24/7</a>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-content">
+          <span class="eyebrow">Emergency — 24/7</span>
+          <h3>Sparks, Burning Smell &amp; Arcing</h3>
+          <p>A burning smell from an outlet, sparks behind a switch plate, or flickering lights that keep getting worse are all signs of an active fault. These are fire hazards. Don't wait — call us and we'll be there.</p>
+          <ul>
+            <li>Loose connection diagnosis and repair</li>
+            <li>Outlet and switch arcing repair</li>
+            <li>Burning panel connections</li>
+            <li>Aluminum wiring hot spot identification</li>
+            <li>Smoke and fire aftermath assessment</li>
+          </ul>
+          <a href="tel:3175550148" class="btn-emergency">📞 Call Now — 24/7</a>
+        </div>
+        <div class="service-full-img">[ Photo: Close-up of burned outlet / sparking panel ]<br><small>Replace with actual photo</small></div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: Electrician resetting / diagnosing breaker panel ]<br><small>Replace with actual photo</small></div>
+        <div class="service-full-content">
+          <span class="eyebrow">Emergency</span>
+          <h3>Breaker Keeps Tripping</h3>
+          <p>A breaker that trips repeatedly is protecting you from something — an overloaded circuit, a failing device, or a wiring fault. We find the root cause and fix it. Resetting the breaker and hoping for the best is not the answer.</p>
+          <ul>
+            <li>Circuit overload diagnosis</li>
+            <li>Short circuit location and repair</li>
+            <li>Failing breaker replacement</li>
+            <li>Circuit load balancing</li>
+            <li>Dedicated circuit installation for high-draw appliances</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Schedule a Diagnostic</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider">
+    <span style="color:var(--yellow);">⚡ Planned &amp; Upgrade Services — Free Estimates</span>
+  </div>
+
+  <!-- PLANNED SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow eyebrow-yellow">Planned Work</span>
+        <h2>Upgrades &amp; Installations — Scheduled on Your Timeline</h2>
+        <p>All planned work comes with a free written estimate before we touch anything. Permits pulled, inspections passed.</p>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-content considered">
+          <span class="eyebrow eyebrow-yellow">Panel Upgrade</span>
+          <h3>200-Amp Panel Upgrade</h3>
+          <p>Homes built before 1980 often have 100-amp panels that can't safely support modern appliances, EV chargers, or home additions. We upgrade to 200A or 400A service — pulling the permit and scheduling the inspection for you.</p>
+          <ul>
+            <li>100A → 200A panel upgrade</li>
+            <li>200A → 400A for large homes or EV fleets</li>
+            <li>Federal Pacific and Zinsco panel replacement</li>
+            <li>Permit and inspection coordinated</li>
+            <li>New circuit capacity for future additions</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Get a Free Estimate</a>
+        </div>
+        <div class="service-full-img">[ Photo: New 200A panel installation ]<br><small>Replace with actual photo</small></div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: Level 2 EV charger in garage ]<br><small>Replace with actual photo</small></div>
+        <div class="service-full-content considered">
+          <span class="eyebrow eyebrow-yellow">EV Charger</span>
+          <h3>Level 2 EV Charger Installation</h3>
+          <p>Stop relying on a Level 1 trickle charge. We run a dedicated 240V/50A circuit from your panel to your garage, install your charger, and pull the permit — so your installation is up to code and covered by your homeowners insurance.</p>
+          <ul>
+            <li>Dedicated 240V/50A circuit installation</li>
+            <li>All charger brands: ChargePoint, JuiceBox, Tesla Wall Connector, Grizzl-E</li>
+            <li>Permit and inspection included</li>
+            <li>Panel capacity assessment before install</li>
+            <li>Outdoor-rated conduit and weatherproof box</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Get a Free Estimate</a>
+        </div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-content considered">
+          <span class="eyebrow eyebrow-yellow">Rewiring</span>
+          <h3>Whole-Home Rewiring</h3>
+          <p>Knob-and-tube wiring from the 1940s and aluminum branch circuit wiring from the 1970s are fire risks that most insurers won't cover. We replace it all — from the panel to every outlet and switch — fully permitted and inspected.</p>
+          <ul>
+            <li>Knob-and-tube replacement</li>
+            <li>Aluminum branch circuit replacement with copper</li>
+            <li>Complete panel-to-outlet rewire</li>
+            <li>AFCI and GFCI protection throughout</li>
+            <li>All work permitted and inspected by the City</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Get a Free Estimate</a>
+        </div>
+        <div class="service-full-img">[ Photo: Old knob-and-tube wiring vs. new wiring ]<br><small>Replace with actual photo</small></div>
+      </div>
+
+      <div class="service-full">
+        <div class="service-full-img">[ Photo: New outlets / recessed lighting installation ]<br><small>Replace with actual photo</small></div>
+        <div class="service-full-content considered">
+          <span class="eyebrow eyebrow-yellow">Outlets &amp; Lighting</span>
+          <h3>Outlets, Circuits &amp; Lighting</h3>
+          <p>Adding a home office? Finishing a basement? Need more outlets in the kitchen or recessed lighting in the living room? We add circuits and install fixtures — no job too small.</p>
+          <ul>
+            <li>Additional outlet and circuit installation</li>
+            <li>GFCI outlet replacement in kitchens and baths</li>
+            <li>Recessed lighting and ceiling fan installation</li>
+            <li>Dimmer switch and smart switch installation</li>
+            <li>Basement and garage circuit additions</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Get a Free Estimate</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Emergency or Estimate — We're Ready</h2>
+      <p>Call 24/7 for emergencies. Free written estimates on all planned work, no obligation.</p>
+      <div class="cta-band-btns">
+        <a href="tel:3175550148" class="btn-emergency">📞 (317) 555-0148</a>
+        <a href="contact.html" class="btn btn-outline">Get a Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">Indy Electric <span>Pro</span></div>
+        <p style="font-size:14px; margin-bottom:10px;">Serving Indianapolis<br>Marion County &amp; Surrounding</p>
+        <p style="font-size:14px;">(317) 555-0148<br>Emergency Line — 24/7</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Emergency Electrical</a></li>
+          <li><a href="services.html">Panel Upgrade</a></li>
+          <li><a href="services.html">EV Charger Install</a></li>
+          <li><a href="services.html">Whole-Home Rewiring</a></li>
+          <li><a href="services.html">Outlets &amp; Circuits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Free Estimate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Indy Electric Pro. All rights reserved.</span>
+      <span>Indianapolis, IN | Licensed &amp; Insured</span>
+    </div>
+    <div class="footer-disclaimer">⚠ DEMO SITE — Placeholder data. Not a real business. Do not call this number.</div>
+  </footer>
+
+</body>
+</html>
