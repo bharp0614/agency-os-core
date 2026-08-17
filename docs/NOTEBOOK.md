@@ -218,7 +218,7 @@ can't follow what's going on." Current clean state:
 
 ---
 
-## Appendix — Three copies of this project
+## Appendix A — Three copies of this project
 
 Whenever something is "invisible," it's usually because it's in a different copy:
 
@@ -230,3 +230,103 @@ Whenever something is "invisible," it's usually because it's in a different copy
 
 They only exchange changes through GitHub. A file written in one copy is
 invisible to the others until it's pushed and pulled.
+
+---
+
+## Appendix B — Scripts & automations reference
+
+Every automation in the repo, what it reads/writes, and whether it's real.
+(Verified by running each one: `pnpm install` → all scripts execute, 27 tests pass.)
+
+### `scaffold-engine.ts` — `pnpm scaffold` **[REAL]**
+Pushes truth-source facts into client files.
+- **Reads:** `truth-source/01` (brand colors), `02` (service radius), `03` (NAP);
+  per client `leads/conversion-data.json` + existing `config.js` (to keep `domain`).
+- **Writes per client:** `website/config.js`, `seo/local-citations.json`,
+  `leads/conversion-data.json`.
+- **Notable:** CTA routing (emergency→call, considered→form, else→dual);
+  placeholders annotated not shipped; atomic `.tmp`+rename writes; skips `[…]`
+  template dirs. Warnings→exit 0, write failure→exit 1.
+- ⚠️ No `--client` = applies the shared truth source to **every** client. Always scope.
+
+### `deployment-validator.ts` (+ `validator-logic.ts`) — `pnpm validate` **[REAL]**
+The HALT gate; also the second half of `prebuild`.
+- **Check 1:** every client's `seo/local-citations.json` has non-empty,
+  non-placeholder `business_name/address/zip/phone` (Zod schema).
+- **Check 2:** `truth-source/04-digital-assets.md` has a `[SECURE_VAULT_REF…]` marker.
+- **On fail:** prints report, POSTs real HALT alert to Slack/Discord if
+  `SLACK_HALT_WEBHOOK`/`DISCORD_HALT_WEBHOOK` set, then `exit 1`.
+
+### `indexer.ts` — `pnpm heartbeat` **[REAL]**
+Audits every client; writes health reports.
+- **Audits:** `local-citations.json` (HALT-level) + `conversion-data.json` (WARN-level).
+- **Scans for leaked credentials** (OpenAI/Stripe/Google/AWS/Slack/GitHub/JWT/hex
+  patterns) → any hit is a HALT.
+- **Writes:** each `clients/<slug>/STATUS.md` + root `agency-dashboard.json`.
+- Any client HALT → `exit 1`.
+
+### `deploy.ts` (+ `deploy-utils.ts`) — `pnpm client:deploy <slug>` **[SIMULATED]**
+- **Real:** requires slug + existing client dir; requires a `VERCEL_DEPLOY_HOOK`
+  vault ref in `truth-source/04` (else HALT); wipes the secret var at the end.
+- **Simulated:** missing secret → mock value; heartbeat spawn commented out;
+  "page build" only prints empty dir names; the Vercel `fetch()` POST is commented
+  out. Prints "COMPLETE" while shipping nothing.
+
+### Build system — `pnpm build` **[REAL, admin app only]**
+`turbo run build` builds the Vite/React truth-source-manager in `src/` — **not**
+client websites. `prebuild` runs `scaffold` + `validate` first.
+
+### `.github/workflows/deploy.yml` — CI **[REAL workflow → simulated endpoint]**
+Manual `workflow_dispatch` with a `client_slug`. Steps: validate slug regex →
+checkout → pnpm/Node 20 → install → `pnpm test` → `pnpm validate` (Slack/Discord
+secrets only) → `pnpm client:deploy` (Vercel hook injected **only now**). The hook
+is withheld until validation passes; the final publish is simulated (see above).
+
+---
+
+## Appendix C — Run it locally on Windows (tested)
+
+Goal: run the automations on your own machine. These steps are verified against
+this repo (Node 22 / pnpm 9; the repo requires Node ≥20, pnpm ≥9).
+
+### One-time setup
+
+```powershell
+# 1. Check Node — need v20 or higher. If missing/old, install the LTS from nodejs.org.
+node --version
+
+# 2. Enable pnpm (ships with Node via corepack — no separate install needed)
+corepack enable
+corepack prepare pnpm@9 --activate
+pnpm --version        # should print 9.x
+
+# 3. Go to your clone and install dependencies (~5–30s first time)
+cd ~\Documents\agency-os-core
+pnpm install
+```
+
+### The everyday commands
+
+```powershell
+pnpm scaffold --client jax-roofing   # sync ONE client (safe). Never omit --client.
+pnpm validate                        # HALT gate — pass/fail on client data
+pnpm heartbeat                        # rewrite STATUS.md + agency-dashboard.json
+pnpm test                            # run the 27 unit tests
+pnpm dev                             # start the React admin app (opens a local URL)
+```
+
+### What "success" looks like
+- `scaffold` → `✓ website/config.js`, `✓ local-citations.json`, `[OK]`.
+- `validate` → `All checks passed — proceeding to build.`
+- `heartbeat` → each client `[HEALTHY]`, `13/13 checks passed`, dashboard written.
+- `test` → `Tests 27 passed (27)`.
+
+### Notes & gotchas
+- **`pnpm dev`** runs the internal admin tool, not a client website — there's no
+  client-site generator yet (that's the roadmap).
+- **`pnpm client:deploy <slug>`** will print success but deploys nothing (simulated).
+- Running `scaffold`/`heartbeat` **edits tracked files** (client config + STATUS.md).
+  That's expected. Review with `git status`; commit them if intended, or
+  `git checkout -- <file>` to discard.
+- If `corepack` says it's disabled, run PowerShell **as Administrator** once for
+  `corepack enable`.
